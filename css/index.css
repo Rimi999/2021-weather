@@ -9,8 +9,13 @@ active 6 22 ~ 02 #20779c, #1f062d
 
 
 /********************** Global *********************/
-.bg-wrapper {position: relative; width: 100%; height: 100vh; overflow: hidden;}
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Noto+Sans+KR:wght@300&family=Sunflower:wght@300;500&display=swap');
 
+html, body {font-family: 'Sunflower', sans-serif; font-size: 16px; line-height: 1.25;}
+
+
+/********************** Wrapper *********************/
+.bg-wrapper {position: relative; width: 100%; height: 100vh; overflow: hidden;}
 .bg-wrapper.active1 {background-image: linear-gradient(#0c0075, #0b1025);}
 .bg-wrapper.active2 {background-image: linear-gradient(#1f58b6, #061737);}
 .bg-wrapper.active3 {background-image: linear-gradient(#fab543, #6d3d03);}
@@ -23,15 +28,17 @@ active 6 22 ~ 02 #20779c, #1f062d
 .wrapper {max-width: 1168px; margin: auto; position: relative;}
 
 
-/********************** Wrapper *********************/
 .bg-wrap {background-repeat: no-repeat; opacity: .3; background-size: 100% auto; position: absolute; color: #fff;}
 .bg-wrap.bg1 {top: 16px; right: 16px; width: 200px; font-size: 200px; opacity: .2;}
 .bg-wrap.bg2 {bottom: 80px; left: -120px; width: 250px; font-size: 250px;  opacity: .1;}
 .bg-wrap.bg3 {bottom: -30px; right: 30%; width: 180px; font-size: 180px;  opacity: .05;}
 
 
-
 /********************** Header *********************/
+.header-wrapper h1.title {color: #fff; font-size: 4em; font-family: 'Do Hyeon', sans-serif; letter-spacing: -.075em; display: flex; justify-content: center; margin-top: 1em; position: relative;}
+.header-wrapper h1.title > span {font-family: 'Noto Sans KR', sans-serif; font-size: .875em; margin-top: -.0625em; margin-right: .25em; opacity: .75;}
+.header-wrapper h1.title::after {position: absolute; display: block; content: ''; width: 40px; height: 3px; background-color: rgba(255, 255, 255, .5); margin: auto; bottom: 0;}
+
 
 
 /********************** Map *********************/
