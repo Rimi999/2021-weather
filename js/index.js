@@ -22,7 +22,7 @@ $(function() {
 		$stageWrapper.addClass('active'+timeDivison);
 	}
 
-
+	
 	/*************** 이벤트 등록 *****************/
 
 
