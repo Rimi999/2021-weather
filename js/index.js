@@ -33,6 +33,7 @@ $(function() {
 		$bgWrapper.addClass('active'+timeDivison);
 	}
 	
+	//4a25235891e03dd674f2b7ba12cbf13a
 
 
 
