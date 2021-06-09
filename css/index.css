@@ -9,7 +9,7 @@ active 6 22 ~ 02 #20779c, #1f062d
 
 
 /********************** Global *********************/
-.stage-wrapper {position: relative; width: 100%; min-height: 100vh; overflow: hidden;}
+.bg-wrapper {position: relative; width: 100%; min-height: 100vh; overflow: hidden;}
 
 .bg-wrapper.active1 {background-image: linear-gradient(#0c0075, #0b1025);}
 .bg-wrapper.active2 {background-image: linear-gradient(#1f58b6, #061737);}
