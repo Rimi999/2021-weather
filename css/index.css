@@ -9,7 +9,7 @@ active 6 22 ~ 02 #20779c, #1f062d
 
 
 /********************** Global *********************/
-.bg-wrapper {position: relative; width: 100%; min-height: 100vh; overflow: hidden;}
+.bg-wrapper {position: relative; width: 100%; height: 100vh; overflow: hidden;}
 
 .bg-wrapper.active1 {background-image: linear-gradient(#0c0075, #0b1025);}
 .bg-wrapper.active2 {background-image: linear-gradient(#1f58b6, #061737);}
@@ -18,6 +18,10 @@ active 6 22 ~ 02 #20779c, #1f062d
 .bg-wrapper.active5 {background-image: linear-gradient(#93ae36, #102b25);}
 .bg-wrapper.active6 {background-image: linear-gradient(#20779c, #1f062d);}
 
+.stage-wrapper {position: absolute; z-index: 1; top:0; left: 0; width: 100%; height: 100%;}
+
+.wrapper {max-width: 1168px; margin: auto; position: relative;}
+
 
 /********************** Wrapper *********************/
 .bg-wrap {background-repeat: no-repeat; opacity: .3; background-size: 100% auto; position: absolute; color: #fff;}
@@ -25,7 +29,6 @@ active 6 22 ~ 02 #20779c, #1f062d
 .bg-wrap.bg2 {bottom: 80px; left: -120px; width: 250px; font-size: 250px;  opacity: .1;}
 .bg-wrap.bg3 {bottom: -30px; right: 30%; width: 180px; font-size: 180px;  opacity: .05;}
 
-.wrapper {}
 
 
 /********************** Header *********************/
@@ -43,7 +46,7 @@ active 6 22 ~ 02 #20779c, #1f062d
 }
 
 @media (max-width: 1199px) {
-	
+	.wrapper {width: calc(100%-32px); margin: 0 16px;}
 }
 
 @media (max-width: 991px) {
