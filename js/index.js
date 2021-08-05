@@ -1,8 +1,14 @@
+/* 
+kAKAO Aap Key:	a1087f86f0900c2dc9d5f49d87b8a9d5
+
+*/
+
+
 $(function() {
-	
+
 	/*************** 글로벌 설정 *****************/
 	var time;
-	var timeDivison;
+	var timeDivision;
 	var weatherIcon = {
 		i01: 'bi-brightness-high',
 		i02: 'bi-cloud-sun',
@@ -14,31 +20,48 @@ $(function() {
 		i13: 'bi-cloud-snow',
 		i50: 'bi-cloud-haze',
 	}
+
 	var $bgWrapper = $('.bg-wrapper');
 
 
+
 	/*************** 사용자 함수 *****************/
-	initBg ();
+	initBg();
+	initMap();
+
 
 	function initBg() {
-		var d = new Date();
+		var d = new Date('2021-05-07 03:33:33');
 		time = d.getHours();
-		timeDivison =
-		(time >= 02	&& time < 06) ? 1:
-		(time >= 06	&& time < 10) ? 2:
-		(time >= 10 && time < 14) ? 3:
-		(time >= 14 && time < 18) ? 4:
-		(time >= 18 && time < 22) ?	5:6;
+		timeDivision = 
+		(time >= 2 	&& time < 6	) ? 1 : 
+		(time >= 6 	&& time < 10) ? 2 :
+		(time >= 10 && time < 14) ? 3 :
+		(time >= 14 && time < 18) ? 4 :
+		(time >= 18 && time < 22) ? 5 : 6;
+
 		for(var i=1; i<=6; i++) $bgWrapper.removeClass('active'+i);
-		$bgWrapper.addClass('active'+timeDivison);
+		$bgWrapper.addClass('active'+timeDivision);
 	}
-	
-	//4a25235891e03dd674f2b7ba12cbf13a
 
+	function initMap() {
+		var container = document.getElementById('map');
+		var options = {
+			center: new kakao.maps.LatLng(36.239934, 127.555918),
+			level: 13,
+			draggable : false,
+			zoomable : false,
+		};
 
+		var map = new kakao.maps.Map(container, options);
+		map.addOverlayMapTypeId(kakao.maps.MapTypeId.TERRAIN);
+	}
 
 	/*************** 이벤트 등록 *****************/
 
 
+
 	/*************** 이벤트 콜백 *****************/
+
+
 });
