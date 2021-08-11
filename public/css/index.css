@@ -1,22 +1,14 @@
 /* 
-active 1 02 ~ 06 #0c0075, #0b1025
-active 2 06 ~ 10 #1f58b6, #061737
-active 3 10 ~ 14 #fab543, #6d3d03
-active 4 14 ~ 18 #fa8c43, #242b10
-active 5 18 ~ 22 #93ae36, #102b25
-active 6 22 ~ 02 #20779c, #1f062d
-
-font-family: 'Do Hyeon', sans-serif;
-font-family: 'Sunflower', sans-serif;
 font-family: 'Noto Sans KR', sans-serif;
 */
 
 /********************** Global *********************/
-@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Noto+Sans+KR:wght@300&family=Sunflower:wght@300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 
-html, body {font-family: 'Sunflower', sans-serif; font-size: 16px; line-height: 1.25;}
+html, body {font-family: 'Noto Sans KR', sans-serif; font-size: 16px; line-height: 1.25;}
 
-.bt-slide {color: rgba(255, 255, 255, .3); position: absolute; top: calc(50% - .5em); z-index: 90; font-size: 2em; cursor: pointer;}
+.bt-slide {color: rgba(255, 255, 255, .3); font-size: 2em; cursor: pointer;
+	position: absolute; top: calc(50% - .5em); z-index: 90;}
 .bt-slide.left {left: 0;}
 .bt-slide.right {right: 0;}
 
@@ -24,80 +16,83 @@ html, body {font-family: 'Sunflower', sans-serif; font-size: 16px; line-height: 
 
 /********************** Wrapper *********************/
 .bg-wrapper {position: fixed; width: 100%; height: 100vh; overflow: hidden;}
-.bg-wrapper.active1 {background-image: linear-gradient(#0c0075, #0b1025);}
+.bg-wrapper.active1 {background-color: #eee;}
 .bg-wrapper.active2 {background-image: linear-gradient(#1f58b6, #6e3608);}
-.bg-wrapper.active3 {background-image: linear-gradient(#ffcb78, #ad4b0a);}
-.bg-wrapper.active4 {background-image: linear-gradient(#fa8c43, #242b10);}
-.bg-wrapper.active5 {background-image: linear-gradient(#3688ae, #102b25);}
-.bg-wrapper.active6 {background-image: linear-gradient(#0a2f69, #220433);}
-
-.bg-wrap {background-repeat: no-repeat; opacity: .3; background-size: 100% auto; position: absolute; color: #fff;}
-.bg-wrap.bg1 {top: 16px; right: 16px; width: 200px; font-size: 200px; opacity: .2;}
-.bg-wrap.bg2 {bottom: 80px; left: -120px; width: 250px; font-size: 250px;  opacity: .1;}
-.bg-wrap.bg3 {bottom: -30px; right: 30%; width: 180px; font-size: 180px;  opacity: .05;}
 
 
-.stage-wrapper {position: absolute; z-index: 1; top: 0; left: 0; width: 100%; height: 100vh; padding-bottom: 2em;}
-.wrapper {max-width: 1168px; height: 100%; margin: auto; position: relative; display: flex; flex-direction: column;}
+.stage-wrapper {position: absolute; z-index: 1; top: 0; left: 0; width: 100%; height: 100vh;
+	padding-bottom: 2em;}
+.wrapper {max-width: 1168px; height: 100%; margin: auto; position: relative;
+	display: flex; flex-direction: column;}
 
 
 /********************** Header *********************/
 .header-wrapper {flex-grow: 0; position: relative;}
-.header-wrapper h1.title {color: #fff; font-size: 4em; font-family: 'Do Hyeon', sans-serif; letter-spacing: -.075em; display: flex; justify-content: center; margin-top: 1em; position: relative;}
-.header-wrapper h1.title > span {font-family: 'Noto Sans KR', sans-serif; font-size: .875em; margin-top: -.0625em; margin-right: .25em; opacity: .75;}
-.header-wrapper h1.title::after {position: absolute; display: block; content: ''; width: 40px; height: 3px; background-color: rgba(255, 255, 255, .5); margin: auto; bottom: 0;}
-.header-wrapper .bt-city {position: absolute; font-size: 2em; color: #fff; right: 10px; bottom: 6px; cursor: pointer; display: none;}
+.header-wrapper h1.title {color: #000; font-weight: 600; font-size: 3em; margin-top: 1em;
+	display: flex; justify-content: center; align-self: center; position: relative;}
+.header-wrapper h1.title > span { margin-right: .25em; font-weight: 400;}
+.header-wrapper .bt-city { font-size: 2em; color: #fff; cursor: pointer;
+	position: absolute; right: 10px; bottom: 6px;  display: none;}
 
 
 /********************** container-wrapper *********************/
-.container-wrapper {margin-top: 2em; margin-bottom: 2em; display: flex; justify-content: space-between; flex-grow: 1; align-items: stretch;}
+.container-wrapper {margin-top: 2em; margin-bottom: 2em;
+	display: flex; justify-content: space-between; flex-grow: 1; align-items: stretch;}
 
 
 /********************** Weather *********************/
-.weather-wrapper {width: 49%; background-color: rgba(0, 0, 0, .25); color: #fff; display: flex; flex-direction: column; position: relative; padding: 1.5em 0;}
-.weather-wrapper .daily-wrapper {display: flex; align-items: center; flex-direction: column; justify-content: center; text-align: center; flex-grow: 1;}
-.weather-wrapper .daily-wrapper .title-wrap {font-size: 1.5em; margin-bottom: 1em;}
+.weather-wrapper {width: 49%; color: #000; display: flex; flex-direction: column; position: relative;}
+.weather-wrapper .daily-wrapper {text-align: center; background-color: rgba(255, 255, 255, .75); border-radius: 10px;
+	display: flex; align-items: center; flex-direction: column; justify-content: space-around; flex-grow: 1;}
+.weather-wrapper .daily-wrapper .title-wrap {font-size: 1.5em; padding: 1em 0; width: 99%}
 .weather-wrapper .daily-wrapper .title-wrap h3.position {font-size: .875em; font-weight: lighter;}
-.weather-wrapper .daily-wrapper .title-wrap h2.name {font-size: 1.5em; border-bottom: 2px solid #fff; margin-bottom: .25em;}
+.weather-wrapper .daily-wrapper .title-wrap h2.name {font-size: 1.5em; margin-bottom: .25em;}
 .weather-wrapper .daily-wrapper .title-wrap h4.time {font-size: .75em; font-weight: lighter;}
 
-.weather-wrapper .daily-wrapper .summary-wrap {font-size: 2em;}
-.weather-wrapper .daily-wrapper .summary-wrap > :first-child {font-size: 1em;}
-.weather-wrapper .daily-wrapper .summary-wrap > :last-child {font-size: .875em;}
 
-.weather-wrapper .daily-wrapper .temp-wrap {font-weight: lighter;}
-.weather-wrapper .daily-wrapper .temp-wrap i {font-style: normal; margin-left: .25em;}
-.weather-wrapper .daily-wrapper .temp-wrap .temp {font-size: 1.5em;}
-.weather-wrapper .daily-wrapper .temp-wrap .temp-desc .gap > span {font-size: 1.25em; font-weight: normal;}
-.weather-wrapper .daily-wrapper .temp-wrap .temp-desc .gap > i {font-size: .75em;}
-.weather-wrapper .daily-wrapper .temp-wrap .temp span {font-weight: normal; font-size: 2em;}
-.weather-wrapper .daily-wrapper .temp-wrap .temp-feel span {font-weight: normal; font-size: 1.25em;}
-.weather-wrapper .daily-wrapper .temp-wrap .temp-feel i {font-size: .75em;}
+.weather-wrapper .daily-wrapper .center-wrap {width: 80%; padding: 1em 0;
+	border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;}
+.weather-wrapper .daily-wrapper .center-wrap .summary-wrap {font-size: 2em; }
+.weather-wrapper .daily-wrapper .center-wrap .summary-wrap > :first-child {font-size: 1em;}
+.weather-wrapper .daily-wrapper .center-wrap .summary-wrap > :last-child {font-size: .875em;}
 
-.weather-wrapper .weekly-wrapper {position: relative;}
-.weather-wrapper .weekly-wrapper .slide-stage {border-top: 1px solid rgba(255, 255, 255, .2); width: 90%; margin: auto; padding: 1em;}
+
+.weather-wrapper .daily-wrapper .desc-wrap {font-weight: lighter; padding: 1em 0; display: flex;}
+.weather-wrapper .daily-wrapper .desc-wrap i {font-style: normal; margin-left: .25em;}
+.weather-wrapper .daily-wrapper .desc-wrap .temp-desc .gap > span {font-size: 1.25em; font-weight: normal;}
+.weather-wrapper .daily-wrapper .desc-wrap .temp-desc .gap > i {font-size: .75em;}
+.weather-wrapper .daily-wrapper .desc-wrap .temp span {font-weight: normal; font-size: 2em;}
+.weather-wrapper .daily-wrapper .desc-wrap .temp-feel span {font-weight: normal; font-size: 1.25em;}
+.weather-wrapper .daily-wrapper .desc-wrap .temp-feel i {font-size: .75em;}
+
+
+/***** .weekly-wrapper *****/
+.weather-wrapper .weekly-wrapper {position: relative; margin-top: 1em; display: flex; align-items: center; 
+	background-color: rgba(255, 255, 255, .75); border-radius: 10px;}
+.weather-wrapper .weekly-wrapper .slide-stage {width: 90%; margin: auto; padding: 1em;}
 .weather-wrapper .weekly-wrapper .slide {font-weight: lighter; font-size: .75em; text-align: center;}
 .weather-wrapper .weekly-wrapper .slide img {display: inline-block;}
 .weather-wrapper .weekly-wrapper .slide i {font-size: .875em;}
 .weather-wrapper .weekly-wrapper .slide .temp > span {font-size: 1.25em;}
 .weather-wrapper .weekly-wrapper .slide .temp-feel > span {font-size: 1.25em;}
 
-
-.weather-wrapper .city-wrapper {position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, .9); z-index: 99; display: none; overflow-y: auto;}
+.weather-wrapper .city-wrapper {position: absolute; left: 0; top: 0; width: 100%; height: 100%;
+	background-color: rgba(0, 0, 0, .9); z-index: 99; display: none; overflow-y: auto;}
 .weather-wrapper .city-wrap {display: flex; flex-wrap: wrap; overflow-x: hidden;}
-.weather-wrapper .city {width: calc(20% + 1px); padding: .5em 0; border: 1px solid #333; text-align: center; font-size: .875em; margin-top: -1px; margin-right: -1px; cursor: pointer;}
+.weather-wrapper .city {width: calc(20% + 1px); padding: .5em 0; border: 1px solid #333;
+	text-align: center; font-size: .875em; margin-top: -1px; margin-right: -1px; cursor: pointer;}
 .weather-wrapper .city:not(.title):hover {background-color: rgba(183, 238, 31, 0.507);}
-.weather-wrapper .city.title {width: 100%; font-size: 1.125em; border: none; padding-top: .75em; cursor: auto;}
+.weather-wrapper .city.title {width: 100%; font-size: 1.125em; border: none; padding-top: .75em;cursor: auto;}
 
 
 /********************** Map *********************/
 .map-wrapper {width: 49%;}
 .map-wrapper #map {width: 100%; height: 100%;}
 
-.map-wrapper .co-wrapper {background-color: rgba(3, 19, 54, 0.9); color: #fff; padding: .325em; font-size: .875em; line-height: 1; letter-spacing: -0.05em; border-radius: 3px; cursor: pointer; position: relative;}
+.map-wrapper .co-wrapper {background-color: rgba(0, 0, 0, .8); color: #fff; padding: .325em; font-size: .875em; line-height: 1; letter-spacing: -0.05em; border-radius: 3px; cursor: pointer; position: relative;}
 .map-wrapper .co-wrapper.click {background-color: rgba(201, 22, 5, 0.9);}
 .map-wrapper .co-wrapper.active {font-size: .75em;}
-.map-wrapper .co-wrapper:hover {background-color: rgba(9, 52, 145, 0.9);}
+.map-wrapper .co-wrapper:hover {background-color: rgba(0, 0, 0, .3);}
 .map-wrapper .co-wrapper .co-wrap {position: absolute; background-color: #c4f1f1; color: #031b47; display: none; justify-content: center; align-items: center; padding-right: 6px; border-radius: 3px; top: 40%; right: -8px; transform: translate(100%, -50%); box-shadow: 0 0 10px rgba(0, 0, 0, .25); min-width: 90px;}
 .map-wrapper .co-wrapper .co-wrap::after {content: '◀'; display: block; position: absolute; color: #c4f1f1; left: -10px; top: calc(50% - 5px);}
 .map-wrapper .co-wrapper .co-wrap.dokdo {left: -8px; right: auto; transform: translate(-100%, -50%);}

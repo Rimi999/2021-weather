@@ -54,13 +54,9 @@ $(function () {
 		var d = new Date();
 		time = d.getHours();
 		timeDivision =
-			(time >= 2 && time < 6) ? 1 :
-			(time >= 6 && time < 10) ? 2 :
-			(time >= 10 && time < 14) ? 3 :
-			(time >= 14 && time < 18) ? 4 :
-			(time >= 18 && time < 22) ? 5 : 6;
+			(time >= 6 && time < 18) ? 1 : 2; 
 
-		for (var i = 1; i <= 6; i++) $bgWrapper.removeClass('active' + i);
+		for (var i = 1; i <= 2; i++) $bgWrapper.removeClass('active' + i);
 		$bgWrapper.addClass('active' + timeDivision);
 	}
 
@@ -110,7 +106,6 @@ $(function () {
 
 	/*************** 이벤트 콜백 *****************/
 	function onToday(r) {
-		console.log(r);
 		var $bgWrapper = $('.bg-wrapper');
 		var $bgWrap = $bgWrapper.find('.bg-wrap');
 		var $wrapper = $('.weather-wrapper');
@@ -118,18 +113,14 @@ $(function () {
 		var $summary = $wrapper.find('.summary-wrap');
 		var $icon = $wrapper.find('.icon-wrap');
 		var $desc = $wrapper.find('.desc-wrap');
-		$title.find('.name').text(r.name + ', KR');
-		$title.find('.time').text(moment(r.dt * 1000).format('hh시 mm분 기준'));
+
+		$title.find('.name').text(r.name);
+		$title.find('.time').text(moment(r.dt * 1000).format('hh:mm 기준'));
 		$summary.find('span').eq(0).text(r.weather[0].description);
 		$summary.find('span').eq(1).text('(' + r.weather[0].main + ')');
 		$icon.find('img').attr('src', getIcon(r.weather[0].icon));
 		$desc.find('.temp span').text(r.main.temp);
 		$desc.find('.temp-feel span').text(r.main.feels_like);
-
-		$bgWrapper.children('div').eq(0).attr('class', 'bg-wrap bg1');
-		$bgWrapper.children('div').eq(1).attr('class', 'bg-wrap bg2');
-		$bgWrapper.children('div').eq(2).attr('class', 'bg-wrap bg3');
-		$bgWrap.addClass(weatherIcon['i'+r.weather[0].icon.substring(0, r.weather[0].icon.length - 1)]);
 
 		var data = cloneObject(sendData);
 		data.lat = r.coord.lat;
@@ -192,7 +183,6 @@ $(function () {
 	
 
 	function onGetCity(r) {
-		// console.log(r.city.length)
 		r.city.forEach(function (v, i) {
 			var content = '';
 			content += '<div class="co-wrapper ' + (v.minimap ? '' : 'minimap') + '" data-lat="' + v.lat + '" data-lon="' + v.lon + '">';
@@ -277,7 +267,6 @@ $(function () {
 	}
 
 	function onOverlayEnter() {
-		// this => .co-wrapper중 호버당한 넘 부모(kakao가 생성한 넘)
 		$(this).find('.co-wrap').css('display', 'flex');
 		$(this).css('z-index', 1);
 		var data = cloneObject(sendData);
@@ -286,7 +275,6 @@ $(function () {
 		$.get(dailyURL, data, onLoad.bind(this));
 
 		function onLoad(r) {
-			// console.log(r);
 			$(this).find('.temp').text(r.main.temp);
 			$(this).find('.icon').attr('src', getIcon(r.weather[0].icon));
 		}
