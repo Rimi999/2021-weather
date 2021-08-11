@@ -53,7 +53,7 @@ html, body {font-family: 'Noto Sans KR', sans-serif; font-size: 16px; line-heigh
 
 
 .weather-wrapper .daily-wrapper .center-wrap {width: 80%; padding: 1em 0;
-	border-top: 1px solid #333; border-bottom: 1px solid #333;}
+	border-top: 1px solid #fff; border-bottom: 1px solid #fff;}
 .weather-wrapper .daily-wrapper .center-wrap .summary-wrap {font-size: 2em; }
 .weather-wrapper .daily-wrapper .center-wrap .summary-wrap > :first-child {font-size: 1em;}
 .weather-wrapper .daily-wrapper .center-wrap .summary-wrap > :last-child {font-size: .875em;}
