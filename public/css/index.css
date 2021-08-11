@@ -16,8 +16,11 @@ html, body {font-family: 'Noto Sans KR', sans-serif; font-size: 16px; line-heigh
 
 /********************** Wrapper *********************/
 .bg-wrapper {position: fixed; width: 100%; height: 100vh; overflow: hidden;}
-.bg-wrapper.active1 {background-color: #eee;}
-.bg-wrapper.active2 {background-image: linear-gradient(#1f58b6, #6e3608);}
+.bg-wrapper.active1 {background-image: linear-gradient(#92CDF5, #F7DDBA);}
+.bg-wrapper.active2 {background-image: linear-gradient(#92CDF5, #0099ff);}
+.bg-wrapper.active3 {background-image: linear-gradient(#0b2086,#921A56, #43495f 50%);}
+.bg-wrapper.active4 {background-image: linear-gradient(#0A1444,#43495f); }
+
 
 
 .stage-wrapper {position: absolute; z-index: 1; top: 0; left: 0; width: 100%; height: 100vh;
@@ -28,30 +31,29 @@ html, body {font-family: 'Noto Sans KR', sans-serif; font-size: 16px; line-heigh
 
 /********************** Header *********************/
 .header-wrapper {flex-grow: 0; position: relative;}
-.header-wrapper h1.title {color: #000; font-weight: 600; font-size: 3em; margin-top: 1em;
-	display: flex; justify-content: center; align-self: center; position: relative;}
+.header-wrapper h1.title {color: #000; font-weight: 600; font-size: 3em; margin-top: 1em; position: relative;
+	display: flex; justify-content: center; align-self: center; }
 .header-wrapper h1.title > span { margin-right: .25em; font-weight: 400;}
-.header-wrapper .bt-city { font-size: 2em; color: #fff; cursor: pointer;
-	position: absolute; right: 10px; bottom: 6px;  display: none;}
+.header-wrapper .bt-city { font-size: 2em; color: #fff; cursor: pointer;	position: absolute; right: 10px; bottom: 6px;}
 
 
 /********************** container-wrapper *********************/
-.container-wrapper {margin-top: 2em; margin-bottom: 2em;
+.container-wrapper {margin-top: 2em; margin-bottom: 2em; position: relative;
 	display: flex; justify-content: space-between; flex-grow: 1; align-items: stretch;}
 
 
 /********************** Weather *********************/
-.weather-wrapper {width: 49%; color: #000; display: flex; flex-direction: column; position: relative;}
-.weather-wrapper .daily-wrapper {text-align: center; background-color: rgba(255, 255, 255, .75); border-radius: 10px;
+.weather-wrapper {width: 49%; color: #000; display: flex; flex-direction: column;}
+.weather-wrapper .daily-wrapper {text-align: center; background-color: rgba(255, 255, 255, .5); border-radius: 10px;
 	display: flex; align-items: center; flex-direction: column; justify-content: space-around; flex-grow: 1;}
 .weather-wrapper .daily-wrapper .title-wrap {font-size: 1.5em; padding: 1em 0; width: 99%}
-.weather-wrapper .daily-wrapper .title-wrap h3.position {font-size: .875em; font-weight: lighter;}
+.weather-wrapper .daily-wrapper .title-wrap h3.position {font-size: .75em; font-weight: lighter;}
 .weather-wrapper .daily-wrapper .title-wrap h2.name {font-size: 1.5em; margin-bottom: .25em;}
 .weather-wrapper .daily-wrapper .title-wrap h4.time {font-size: .75em; font-weight: lighter;}
 
 
 .weather-wrapper .daily-wrapper .center-wrap {width: 80%; padding: 1em 0;
-	border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;}
+	border-top: 1px solid #333; border-bottom: 1px solid #333;}
 .weather-wrapper .daily-wrapper .center-wrap .summary-wrap {font-size: 2em; }
 .weather-wrapper .daily-wrapper .center-wrap .summary-wrap > :first-child {font-size: 1em;}
 .weather-wrapper .daily-wrapper .center-wrap .summary-wrap > :last-child {font-size: .875em;}
@@ -68,7 +70,7 @@ html, body {font-family: 'Noto Sans KR', sans-serif; font-size: 16px; line-heigh
 
 /***** .weekly-wrapper *****/
 .weather-wrapper .weekly-wrapper {position: relative; margin-top: 1em; display: flex; align-items: center; 
-	background-color: rgba(255, 255, 255, .75); border-radius: 10px;}
+	background-color: rgba(255, 255, 255, .5); border-radius: 10px;}
 .weather-wrapper .weekly-wrapper .slide-stage {width: 90%; margin: auto; padding: 1em;}
 .weather-wrapper .weekly-wrapper .slide {font-weight: lighter; font-size: .75em; text-align: center;}
 .weather-wrapper .weekly-wrapper .slide img {display: inline-block;}
@@ -77,24 +79,28 @@ html, body {font-family: 'Noto Sans KR', sans-serif; font-size: 16px; line-heigh
 .weather-wrapper .weekly-wrapper .slide .temp-feel > span {font-size: 1.25em;}
 
 .weather-wrapper .city-wrapper {position: absolute; left: 0; top: 0; width: 100%; height: 100%;
-	background-color: rgba(0, 0, 0, .9); z-index: 99; display: none; overflow-y: auto;}
+	background-color: rgba(0, 0, 0, .8); z-index: 99; display: none; overflow-y: auto;}
 .weather-wrapper .city-wrap {display: flex; flex-wrap: wrap; overflow-x: hidden;}
-.weather-wrapper .city {width: calc(20% + 1px); padding: .5em 0; border: 1px solid #333;
+.weather-wrapper .city {width: calc(20% + 1px); padding: .5em 0; border: 1px solid #333; color: #fff;
 	text-align: center; font-size: .875em; margin-top: -1px; margin-right: -1px; cursor: pointer;}
-.weather-wrapper .city:not(.title):hover {background-color: rgba(183, 238, 31, 0.507);}
+.weather-wrapper .city:not(.title):hover {background-color: rgba(35, 243, 243, 0.507);}
 .weather-wrapper .city.title {width: 100%; font-size: 1.125em; border: none; padding-top: .75em;cursor: auto;}
 
+
+.weather-wrapper .weekly-wrapper .slide-stage .temp-wrap .temp {font-weight: normal;}
+.weather-wrapper .weekly-wrapper .slide-stage .bt-slide {color: #888;}
+.weather-wrapper .weekly-wrapper .slide-stage .bt-slide:hover {color: #444;}
 
 /********************** Map *********************/
 .map-wrapper {width: 49%;}
 .map-wrapper #map {width: 100%; height: 100%;}
 
 .map-wrapper .co-wrapper {background-color: rgba(0, 0, 0, .8); color: #fff; padding: .325em; font-size: .875em; line-height: 1; letter-spacing: -0.05em; border-radius: 3px; cursor: pointer; position: relative;}
-.map-wrapper .co-wrapper.click {background-color: rgba(201, 22, 5, 0.9);}
+.map-wrapper .co-wrapper.click {background-color: rgb(24, 80, 236);}
 .map-wrapper .co-wrapper.active {font-size: .75em;}
-.map-wrapper .co-wrapper:hover {background-color: rgba(0, 0, 0, .3);}
-.map-wrapper .co-wrapper .co-wrap {position: absolute; background-color: #c4f1f1; color: #031b47; display: none; justify-content: center; align-items: center; padding-right: 6px; border-radius: 3px; top: 40%; right: -8px; transform: translate(100%, -50%); box-shadow: 0 0 10px rgba(0, 0, 0, .25); min-width: 90px;}
-.map-wrapper .co-wrapper .co-wrap::after {content: '◀'; display: block; position: absolute; color: #c4f1f1; left: -10px; top: calc(50% - 5px);}
+.map-wrapper .co-wrapper:hover {background-color: #ccc; color:#000}
+.map-wrapper .co-wrapper .co-wrap {position: absolute; background-color: #ccc; color: #031b47; display: none; justify-content: center; align-items: center; padding-right: 6px; border-radius: 3px; top: 40%; right: -8px; transform: translate(100%, -50%); box-shadow: 0 0 10px rgba(0, 0, 0, .25); min-width: 90px;}
+.map-wrapper .co-wrapper .co-wrap::after {content: '◀'; display: block; position: absolute; color: #ccc; left: -10px; top: calc(50% - 5px);}
 .map-wrapper .co-wrapper .co-wrap.dokdo {left: -8px; right: auto; transform: translate(-100%, -50%);}
 .map-wrapper .co-wrapper .co-wrap.dokdo::after {content: '▶'; left: auto; right: -10px;}
 .map-wrapper .co-wrapper .co-wrap > .icon-wrap {width: 40px;}
@@ -128,7 +134,6 @@ html, body {font-family: 'Noto Sans KR', sans-serif; font-size: 16px; line-heigh
 	.weather-wrapper {width: 100%;}
 	.map-wrapper {display: none;}
 
-	.header-wrapper .bt-city {display: block;}
 }
 
 @media (max-width: 575px) {

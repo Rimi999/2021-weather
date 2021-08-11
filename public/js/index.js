@@ -54,9 +54,11 @@ $(function () {
 		var d = new Date();
 		time = d.getHours();
 		timeDivision =
-			(time >= 6 && time < 18) ? 1 : 2; 
+			(time >= 6 && time < 12) ? 1 :
+			(time >= 12 && time < 18) ? 2 :
+			(time >= 18 && time < 24) ? 3 : 4;
 
-		for (var i = 1; i <= 2; i++) $bgWrapper.removeClass('active' + i);
+		for (var i = 1; i <= 4; i++) $bgWrapper.removeClass('active' + i);
 		$bgWrapper.addClass('active' + timeDivision);
 	}
 
@@ -107,7 +109,6 @@ $(function () {
 	/*************** 이벤트 콜백 *****************/
 	function onToday(r) {
 		var $bgWrapper = $('.bg-wrapper');
-		var $bgWrap = $bgWrapper.find('.bg-wrap');
 		var $wrapper = $('.weather-wrapper');
 		var $title = $wrapper.find('.title-wrap');
 		var $summary = $wrapper.find('.summary-wrap');
@@ -144,7 +145,6 @@ $(function () {
 	}
 
 	function onWeekly(r) {
-		console.log(r);
 		var html = '';
 		var $stage = $('.weather-wrapper .slide-stage');
 		var $slick = $('.weather-wrapper .slide-wrapper');
