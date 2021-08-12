@@ -116,7 +116,7 @@ html, body {font-family: 'Noto Sans KR', sans-serif; font-size: 16px; line-heigh
 }
 
 @media (max-width: 1199px) {
-	.wrapper {width: calc(100% - 32px); margin: 0 16px;}
+	.wrapper {width: calc(100% - 32px); margin: 16px;}
 }
 
 @media (max-width: 991px) {
