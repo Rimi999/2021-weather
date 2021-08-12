@@ -7,8 +7,8 @@ font-family: 'Noto Sans KR', sans-serif;
 
 html, body {font-family: 'Noto Sans KR', sans-serif; font-size: 16px; line-height: 1.25;}
 
-.bt-slide {color: rgba(255, 255, 255, .3); font-size: 2em; cursor: pointer;
-	position: absolute; top: calc(50% - .5em); z-index: 90;}
+.bt-slide {color: rgba(255, 255, 255, .3); font-size: 2em; cursor: pointer;	position: absolute;
+	top: calc(50% - .5em); z-index: 90;}
 .bt-slide.left {left: 0;}
 .bt-slide.right {right: 0;}
 
@@ -31,7 +31,7 @@ html, body {font-family: 'Noto Sans KR', sans-serif; font-size: 16px; line-heigh
 
 /********************** Header *********************/
 .header-wrapper {flex-grow: 0; position: relative;}
-.header-wrapper h1.title {color: #000; font-weight: 600; font-size: 3em; margin-top: 1em; position: relative;
+.header-wrapper h1.title {color: #fff; font-weight: 600; font-size: 3em; margin-top: 1em; position: relative;
 	display: flex; justify-content: center; align-self: center; }
 .header-wrapper h1.title > span { margin-right: .25em; font-weight: 400;}
 .header-wrapper .bt-city { font-size: 2em; color: #fff; cursor: pointer;	position: absolute; right: 10px; bottom: 6px;}

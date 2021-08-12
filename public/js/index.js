@@ -54,9 +54,9 @@ $(function () {
 		var d = new Date();
 		time = d.getHours();
 		timeDivision =
-			(time >= 6 && time < 12) ? 1 :
-			(time >= 12 && time < 18) ? 2 :
-			(time >= 18 && time < 24) ? 3 : 4;
+			(time >= 4 && time < 10) ? 1 :
+			(time >= 10 && time < 16) ? 2 :
+			(time >= 16 && time < 22) ? 3 : 4;
 
 		for (var i = 1; i <= 4; i++) $bgWrapper.removeClass('active' + i);
 		$bgWrapper.addClass('active' + timeDivision);
